@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>sort</title>
+</head>
+<body>
+
+
+<script>
+	 
+	  //普通循环解决升降序
+	  //
+               //降序
+        var arr=[8,41,25,63,12,27,31];   
+       for(var i=0;i<arr.length;i++){
+              for(var j=i+1;j<arr.length;j++){
+                      if(arr[i]<arr[j]){
+                          var temp = arr[i];
+                          arr[i]=arr[j];
+                          arr[j]=temp;
+                      }
+              }
+                
+        }
+        document.write(arr);
+
+              //升序
+        var arr=[8,41,25,63,12,27,31];
+       for(var i=0;i<arr.length;i++){
+              for(var j=0;j<arr.length;j++){
+                      if(arr[i]<arr[j]){
+                          var temp = arr[i];
+                          arr[i]=arr[j];
+                          arr[j]=temp;
+                      }
+              }
+                
+        }
+        document.write(arr);
+
+
+        //运用函数解决升降序
+        
+        
+                //降序              
+        var arr1=[8,41,25,63,12,27,31];
+        var arr2=[54,55,22,21,44,33];
+        fn(arr2);
+        function fn(arr){
+              for(var i=0;i<arr.length;i++){
+              for(var j=i+1;j<arr.length;j++){
+                      if(arr[j]>arr[i]){
+                          var temp = arr[i];
+                          arr[i]=arr[j];
+                          arr[j]=temp;
+                      }
+              }
+                
+        }
+        document.write(arr);
+
+        }
+        
+
+            //升序
+            
+            
+      var arr1=[8,41,25,63,12,27,31];
+        var arr2=[54,55,22,21,44,33];
+        fn(arr1);
+        function fn(arr){
+              for(var i=0;i<arr.length;i++){
+                  for(var j=i+1;j<arr.length;j++){
+                       if(arr[j]<arr[i]){
+                           var temp = arr[j];
+                           arr[j]=arr[i];
+                           arr[i]=temp;
+                       }
+                  }
+                
+              }
+              document.write(arr);
+        } 
+      
+
+	 //函数排序（总）
+      
+        var arr=[10,30,20,80,60,50,90,40];
+        sort(arr,'>');
+        function sort(arr,type){
+        	// if(type==undefined){   //第一种（分支）
+        	// 	type='<';
+        	// }
+        	type=type==undefined?'<':type;   //第二种（三元）
+        	// type=type||'<';    //第三种（逻辑）
+        	// function sort(arr,type=='>'){if(){}else if(){} } //第四种（ES6）
+        	if(type=='<'){      
+        		sortup(arr);
+        	}else if(type=='>'){ 
+        		sortdown(arr);
+        	}
+        }
+        function sortup(arr){
+            for(i=0;i<arr.length;i++){
+               for(j=i+1;j<arr.length;j++){
+               	if(arr[j]<arr[i]){
+                    var temp=arr[j];
+                    arr[j]=arr[i];
+                    arr[i]=temp;
+               	}
+               }
+            }
+            console.log(arr);
+        }
+          function sortdown(arr){
+            for(i=0;i<arr.length;i++){
+               for(j=i+1;j<arr.length;j++){
+               	if(arr[j]>arr[i]){
+                    var temp=arr[j];
+                    arr[j]=arr[i];
+                    arr[i]=temp;
+               	}
+               }
+            }
+            console.log(arr);    
+        }
+</script>
+
+	
+</body>
+</html>
